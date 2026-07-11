@@ -1,0 +1,1 @@
+@extends('layouts.admin') @section('title','QR del estudiante') @section('content')<h2>{{$estudiante->user->name}}</h2><p>Matrícula: {{$estudiante->matricula}}</p><p>{{$estudiante->grado->nombre}} - {{$estudiante->seccion->nombre}}</p><h3>Token QR (simulación)</h3><pre style="white-space:pre-wrap;border:2px solid;padding:2rem">{{$estudiante->qr_token}}</pre>@endsection

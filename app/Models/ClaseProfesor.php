@@ -1,0 +1,3 @@
+<?php
+namespace App\Models; use Illuminate\Database\Eloquent\Model;use Illuminate\Database\Eloquent\SoftDeletes;use Illuminate\Database\Eloquent\Relations\{BelongsTo,HasMany};
+class ClaseProfesor extends Model{use SoftDeletes;protected $table='clase_profesor';protected $fillable=['profesor_id','materia_id','grado_id','seccion_id'];public function profesor():BelongsTo{return $this->belongsTo(User::class,'profesor_id');}public function materia():BelongsTo{return $this->belongsTo(Materia::class);}public function grado():BelongsTo{return $this->belongsTo(Grado::class);}public function seccion():BelongsTo{return $this->belongsTo(Seccion::class);}public function asistencias():HasMany{return $this->hasMany(Asistencia::class);}}

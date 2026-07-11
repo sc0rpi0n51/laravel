@@ -1,0 +1,1 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Estudiante</title></head><body><h1>Panel del estudiante</h1><p>Bienvenido, {{auth()->user()->name}}.</p>@if(auth()->user()->estudiante)<p>Tu token: <code>{{auth()->user()->estudiante->qr_token}}</code></p>@endif<form method="POST" action="{{route('logout')}}">@csrf<button>Salir</button></form></body></html>

@@ -1,0 +1,1 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Profesor</title></head><body><h1>Panel del profesor</h1><p>Bienvenido, {{auth()->user()->name}}.</p><a href="{{route('profesor.escanear')}}">Registrar asistencia</a><form method="POST" action="{{route('logout')}}">@csrf<button>Salir</button></form></body></html>

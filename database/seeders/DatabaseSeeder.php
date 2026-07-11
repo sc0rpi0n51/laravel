@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\{Grado, Seccion, User};
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Grado::firstOrCreate(['nombre'=>'1er año']); Seccion::firstOrCreate(['nombre'=>'A']);
+        User::firstOrCreate(['email'=>'admin@sae.test'],['name'=>'Administrador SAE','password'=>'Cambiar123!','role'=>'admin','estado'=>true]);
     }
 }
